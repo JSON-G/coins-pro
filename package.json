@@ -6,9 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JSON-G/coins-pro.git"
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JSON-G/coins-pro/issues"
+  },
+  "homepage": "https://github.com/JSON-G/coins-pro#readme",
   "dependencies": {
     "ws": "^7.0.1"
   }
