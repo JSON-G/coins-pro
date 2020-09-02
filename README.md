@@ -29,8 +29,18 @@ agent.start({
         });
     }, 40000);
 
+    // subscribe to BTC market data
     agent.subscribe(6, returnData => {
         console.log(`===== Current Market Data [BTC] =====\n`, returnData);
     });
+
+    // send sell (Side: 1) order for BTCPHP (InstrumentId: 6)
+    agent.sendOrder({
+        InstrumentId: 6,
+        Quantity: 0.00001743,
+        Side: 1 // 0 (buy) or 1 (sell)
+    }, (res) => {
+        console.log(`===== Sell Order =====\n`, res);
+    })
 })
 </pre>
