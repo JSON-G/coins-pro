@@ -37,7 +37,8 @@ agent.start({
     // Retrieves list of Positions (Balances).
     agent.getAccountPositions(response => console.log(`===== Account Positions =====\n`, response));
 
-    // Send buy (Side: 0) order for BTCPHP (InstrumentId: 6) amounting to 0.00002000 Bitcoins (Quantity: 0.00002000).
+    // Send buy (Side: 0) order for BTCPHP (InstrumentId: 6) 
+    // amounting to 0.00002000 Bitcoins (Quantity: 0.00002000).
     agent.sendOrder({
         InstrumentId: 6,
         Quantity: 0.00002000,
@@ -49,6 +50,8 @@ agent.start({
     // Retrieves the latest Level 1 Ticker information and Subscribes the user to Level 1 Market Data
     // updates for the specified Instrument. After subscribing, the user will receive periodic
     // Level1UpdateEvent event information until they call UnsubscribeLevel1.
-    agent.subscribeLevel1(6, response => { console.log(`===== Current Market Data Lv1 [BTC] =====\n`, response) });
+    agent.subscribeLevel1(6, response => { 
+        console.log(`===== Current Market Data Lv1 [BTC] =====\n`, response) 
+    });
 });
 </pre>
