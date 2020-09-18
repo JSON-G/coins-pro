@@ -84,6 +84,14 @@ API Documentation: https://exchange.coins.asia/assets/docs/Coins-Pro-API.pdf
       </li>
     </ul>
   </li>
+  <li>
+    <a href="#faq">FAQ</a>
+    <ul>
+      <li><a href="#how-to-get-api-key">How to Get API Key & Secret?</a></li>
+      <li><a href="#how-to-get-userid">How to Get UserId?</a></li>
+    </ul>
+  </li>
+  <li><a href="#license">License</a></li>
 </ul>
 
 <h2 id="installation">Installation</h2>
@@ -869,3 +877,21 @@ setInterval(() => {
   });
 }, 40000);
 ```
+
+<h2 id="faq">FAQ</h2>
+<h3 id="how-to-get-api-key">How to Get API Key & Secret?</h3>
+<ol>
+  <li>Login to the Coins Pro website at <a href="https://exchange.coins.asia/">https://exchange.coins.asia/</a></li>
+  <li>Go to <a href="https://exchange.coins.asia/keys">API Key Management</a>. This can also be accessed via the website hamburger menu.</li>
+  <li>From the API Key Management, you can create new API Keys which will generate your API Key & Secret. This webpage also displays your existing API Keys.</li>
+</ol>
+
+<h3 id="how-to-get-userid">How to Get UserId?</h3>
+<ol>
+  <li>Login to the Coins Pro website at <a href="https://exchange.coins.asia/">https://exchange.coins.asia/</a></li>
+  <li>Go to <a href="https://exchange.coins.asia/keys">API Key Management</a>. This can also be accessed via the website hamburger menu.</li>
+  <li>From the API Key Management webpage, your UserId should be displayed.</li>
+</ol>
+
+<h2 id="license">License</h2>
+<a href="https://github.com/JSON-G/coins-pro/blob/master/LICENSE">MIT</a>
