@@ -1,106 +1,63 @@
 # coins-pro
 
-[![Version npm](https://img.shields.io/badge/npm-v1.0.0-blue?logo=npm)](https://www.npmjs.com/package/coins-pro)
+[![Version npm](https://img.shields.io/badge/npm-v1.1.1-blue?logo=npm)](https://www.npmjs.com/package/coins-pro)
 
 coins-pro is an API wrapper for Coins Pro (https://exchange.coins.asia) written in NodeJS
 
 API Documentation: https://exchange.coins.asia/assets/docs/Coins-Pro-API.pdf
 
-<h2 id="table-of-contents">Table of Contents</h2>
-<ul>
-  <li><a href="#installation">Installation</a></li>
-  <li><a href="#getting-started">Getting Started</a></li>
-  <li>
-    <a href="#coinsproapi-methods">CoinsProAPI Methods</a>
-    <ul>
-      <li>
-        <a href="#unauthenticated-endpoints">Unauthenticated Endpoints</a>
-        <ul>
-          <li><a href="#getProducts">getProducts</a></li>
-          <li><a href="#getInstruments">getInstruments</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#api-key">API Keys</a>
-        <ul>
-          <li><a href="#getUserAPIKeys">getUserAPIKeys</a></li>
-          <li><a href="#addUserAPIKey">addUserAPIKey</a></li>
-          <li><a href="#removeUserAPIKey">removeUserAPIKey</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#user-account">User Account</a>
-        <ul>
-          <li><a href="#getUserAccounts">getUserAccounts</a></li>
-          <li><a href="#getAccountTransactions">getAccountTransactions</a></li>
-          <li><a href="#getAccountPositions">getAccountPositions</a></li>
-          <li><a href="#getAccountTrades">getAccountTrades</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#orders">Orders</a>
-        <ul>
-          <li><a href="#sendOrder">sendOrder</a></li>
-          <li><a href="#cancelOrder">cancelOrder</a></li>
-          <li><a href="#getOrderStatus">getOrderStatus</a></li>
-          <li><a href="#getOrderFee">getOrderFee</a></li>
-          <li><a href="#getOrderHistory">getOrderHistory</a></li>
-          <li><a href="#getOpenOrders">getOpenOrders</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#deposits">Deposits</a>
-        <ul>
-          <li><a href="#getDepositTickets">getDepositTickets</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#withdrawals">Withdrawals</a>
-        <ul>
-          <li><a href="#createWithdrawTicket">createWithdrawTicket</a></li>
-          <li><a href="#getWithdrawTicket">getWithdrawTicket</a></li>
-          <li><a href="#getWithdrawTickets">getWithdrawTickets</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#market-data">Market Data</a>
-        <ul>
-          <li><a href="#subscribeLevel1">subscribeLevel1</a></li>
-          <li><a href="#unsubscribeLevel1">unsubscribeLevel1</a></li>
-          <li><a href="#subscribeLevel2">subscribeLevel2</a></li>
-          <li><a href="#unsubscribeLevel2">unsubscribeLevel2</a></li>
-          <li><a href="#subscribeTrades">subscribeTrades</a></li>
-          <li><a href="#unsubscribeTrades">unsubscribeTrades</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#account-events">Account Events</a>
-        <ul>
-          <li><a href="#subscribeAccountEvents">subscribeAccountEvents</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#ping">Ping</a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a href="#faq">FAQ</a>
-    <ul>
-      <li><a href="#how-to-get-api-key">How to Get API Key & Secret?</a></li>
-      <li><a href="#how-to-get-userid">How to Get UserId?</a></li>
-    </ul>
-  </li>
-  <li><a href="#license">License</a></li>
-</ul>
+## Table of Contents
 
-<h2 id="installation">Installation</h2>
+- [Installation](#installation)
+- [Getting Started](#getting-started)
+- [CoinsProAPI Methods](#coinsproapi-methods)
+  - [Unauthenticated Endpoints](#unauthenticated-endpoints)
+    - [getProducts](#getProducts)
+    - [getInstruments](#getInstruments)
+  - [API Keys](#api-keys)
+    - [getUserAPIKeys](#getUserAPIKeys)
+    - [addUserAPIKey](#addUserAPIKey)
+    - [removeUserAPIKey](#removeUserAPIKey)
+  - [User Account](#user-account)
+    - [getUserAccounts](#getUserAccounts)
+    - [getAccountTransactions](#getAccountTransactions)
+    - [getAccountPositions](#getAccountPositions)
+    - [getAccountTrades](#getAccountTrades)
+  - [Orders](#orders)
+    - [sendOrder](#sendOrder)
+    - [cancelOrder](#cancelOrder)
+    - [getOrderStatus](#getOrderStatus)
+    - [getOrderFee](#getOrderFee)
+    - [getOrderHistory](#getOrderHistory)
+    - [getOpenOrders](#getOpenOrders)
+  - [Deposits](#deposits)
+    - [getDepositTickets](#getDepositTickets)
+  - [Withdrawals](#withdrawals)
+    - [createWithdrawTicket](#createWithdrawTicket)
+    - [getWithdrawTicket](#getWithdrawTicket)
+    - [getWithdrawTickets](#getWithdrawTickets)
+  - [Market Data](#market-data)
+    - [subscribeLevel1](#subscribeLevel1)
+    - [unsubscribeLevel1](#unsubscribeLevel1)
+    - [subscribeLevel2](#subscribeLevel2)
+    - [unsubscribeLevel2](#unsubscribeLevel2)
+    - [subscribeTrades](#subscribeTrades)
+    - [unsubscribeTrades](#unsubscribeTrades)
+  - [Account Events](#account-events)
+    - [subscribeAccountEvents](#subscribeAccountEvents)
+  - [Ping](#ping)
+- [FAQ](#faq)
+  - [How to Get API Key and Secret](#how-to-get-api-key-and-secret)
+  - [How to Get UserId?](#how-to-get-userid)
+- [License](#license)
+
+## Installation
 
 <pre>
 npm i coins-pro
 </pre>
 
-<h2 id="getting-started">Getting Started</h2>
+## Getting Started
 
 ```javascript
 
@@ -150,16 +107,17 @@ agent.start({
 });
 ```
 
-<h2 id="coinsproapi-methods">CoinsProAPI Methods</h2>
+## CoinsProAPI Methods
 
-<p>After successfully authenticating & connecting to the Coins Pro websocket by using the method start as described in the <a href="#getting-started">Getting Started</a> section, you can now send messages to the websocket server (take note some methods do not require authentication such as <code>getProducts</code> and <code>getInstruments</code>). 
+After successfully authenticating & connecting to the Coins Pro websocket by using the method start as described in the [Getting Started](#getting-started) section, you can now send messages to the websocket server (take note some methods do not require authentication such as <code>getProducts</code> and <code>getInstruments</code>). 
   
-All of the methods accepts various arguments depending on what data is required in sending the websocket message, but all of them accepts a callback function which has 1 parameter. This parameter contains the message that Coins Pro has sent in response to your message pertaining to the specific method which was invoked to send the websocket message. So for example, if you invoke <code>getProducts</code>, Coins Pro will send you the list of Products available and this data will be accessible through the aforementioned parameter of the callback function.</p>
+All of the methods accepts various arguments depending on what data is required in sending the websocket message, but all of them accepts a callback function which has 1 parameter. This parameter contains the message that Coins Pro has sent in response to your message pertaining to the specific method which was invoked to send the websocket message. So for example, if you invoke <code>getProducts</code>, Coins Pro will send you the list of Products available and this data will be accessible through the aforementioned parameter of the callback function.
 
-<h3 id="unauthenticated-endpoints">Unauthenticated Endpoints</h3>
+### Unauthenticated Endpoints 
 
-<h4 id="getProducts">getProducts(callback?: Function)</h4>
+#### getProducts
 <p>Requests a list of available Products from the API.</p>
+<p><span>CoinsProAPI.getProducts(callback?: Function)</span></p>
 <table>
   <tr>
     <td>callback</td>
@@ -173,8 +131,9 @@ agent.getProducts((response) => {
 });
 ```
 
-<h4 id="getInstruments">getInstruments(callback?: Function)</h4>
+#### getInstruments
 <p>Requests a list of available instruments from the API.</p>
+<p><span>CoinsProAPI.getInstruments(callback?: Function)</span></p>
 <table>
   <tr>
     <td>callback</td>
@@ -188,10 +147,11 @@ agent.getInstruments((response) => {
 });
 ```
 
-<h3 id="api-keys">API Keys</h3>
+### API Keys 
 
-<h4 id="getUserAPIKeys">getUserAPIKeys(callback?: Function)</h4>
+#### getUserAPIKeys
 <p>The endpoint will return existing APIKeys with assigned permissions. APISecret field will not be returned.</p>
+<p><span>CoinsProAPI.getUserAPIKeys(callback?: Function)</span></p>
 <table>
   <tr>
     <td>callback</td>
@@ -205,7 +165,7 @@ agent.getUserAPIKeys((response) => {
 });
 ```
 
-<h4 id="addUserAPIKey">addUserAPIKey(permissions: string[], callback?: Function)</h4>
+#### addUserAPIKey
 <p>In order to authenticate using an API key, you will need to create an ApiKey and ApiSecret
 using this endpoint. Your UserId will be needed along with the permissions you wish to
 enable in payload.</p>
@@ -215,7 +175,7 @@ APISecret.</p>
 
 <p>Note: Please save the APIKey and APISecret values returned in a secure location. Both of
 these values are needed for authentication and signature generation.</p>
-
+<p><span>CoinsProAPI.addUserAPIKey(permissions: string[], callback?: Function)</span></p>
 <table>
   <tr>
     <td>permissions</td>
@@ -233,8 +193,9 @@ agent.addUserAPIKey(["Deposit", "Withdraw"], (response) => {
 });
 ```
 
-<h4 id="removeUserAPIKey">removeUserAPIKey(ApiKey: string, callback?: Function)</h4>
+#### removeUserAPIKey
 <p>Removes API Key from the user's account.</p>
+<p><span>CoinsProAPI.removeUserAPIKey(ApiKey: string, callback?: Function)</span></p>
 <table>
   <tr>
     <td>ApiKey</td>
@@ -252,11 +213,12 @@ agent.removeUserAPIKey("a841099374d1fb6162553075b1f8065b", (response) => {
 });
 ```
 
-<h3 id="user-account">User Account</h3>
+### User Account 
 
-<h4 id="getUserAccounts">getUserAccounts(callback?: Function)</h4>
+#### getUserAccounts
 <p>Retrieves a list of account IDs for the current user. The Request should have an empty string
 as the payload. Typically, each user is assigned one account</p>
+<p><span>CoinsProAPI.getUserAccounts(callback?: Function)</span></p>
 <table>
   <tr>
     <td>callback</td>
@@ -270,13 +232,14 @@ agent.getUserAccounts((response) => {
 });
 ```
 
-<h4 id="getAccountTransactions">
-getAccountTransactions({ StartIndex, Count }: {<br>
+#### getAccountTransactions
+<p>Retrieves a list of recent transactions from your account.</p>
+<p><span>
+CoinsProAPI.getAccountTransactions({ StartIndex, Count }: {<br>
 &nbsp;&nbsp;StartIndex: number;<br>
 &nbsp;&nbsp;Count: number;<br>
 }, callback?: Function)
-</h4>
-<p>Retrieves a list of recent transactions from your account.</p>
+</span></p>
 <table>
   <tr>
     <td>StartIndex</td>
@@ -301,8 +264,9 @@ agent.getAccountTransactions({
 });
 ```
 
-<h4 id="getAccountPositions">getAccountPositions(callback?: Function)</h4>
+#### getAccountPositions
 <p>Retrieves a list of Positions(Balances) on a specific account.</p>
+<p><span>CoinsProAPI.getAccountPositions(callback?: Function)</span></p>
 <table>
   <tr>
     <td>callback</td>
@@ -316,13 +280,14 @@ agent.getAccountPositions((response) => {
 });
 ```
 
-<h4 id="getAccountTrades">
-getAccountTrades({ StartIndex, Count }: {<br>
+#### getAccountTrades
+<p>Retrieves Trade History for a specific account.</p>
+<p><span>
+CoinsProAPI.getAccountTrades({ StartIndex, Count }: {<br>
 &nbsp;&nbsp;StartIndex: number;<br>
 &nbsp;&nbsp;Count: number;<br>
 }, callback?: Function)
-</h4>
-<p>Retrieves Trade History for a specific account.</p>
+</span></p>
 <table>
   <tr>
     <td>StartIndex</td>
@@ -347,10 +312,14 @@ agent.getAccountTrades({
 });
 ```
 
-<h3 id="orders">Orders</h3>
+### Orders 
 
-<h4 id="sendOrder">
-sendOrder(obj?: {<br>
+#### sendOrder
+<p>Sends a new order through the API. It is important that you are subscribed to Account Actions
+(SubscribeAccountEvents) in order to receive updated status events for entered orders.
+Alternatively, you can also call GetOpenOrders and/or GetOrderHistory to check order status.</p>
+<p><span>
+CoinsProAPI.sendOrder(obj?: {<br>
 &nbsp;&nbsp;InstrumentId: number;<br>
 &nbsp;&nbsp;Quantity: number;<br>
 &nbsp;&nbsp;Side: number;<br>
@@ -366,10 +335,7 @@ sendOrder(obj?: {<br>
 &nbsp;&nbsp;TrailingAmount: number;<br>
 &nbsp;&nbsp;StopPrice: number;<br>
 }, callback?: Function)
-</h4>
-<p>Sends a new order through the API. It is important that you are subscribed to Account Actions
-(SubscribeAccountEvents) in order to receive updated status events for entered orders.
-Alternatively, you can also call GetOpenOrders and/or GetOrderHistory to check order status.</p>
+</span></p>
 <table>
   <tr>
     <td>InstrumentId</td>
@@ -443,8 +409,9 @@ agent.sendOrder({
 })
 ```
 
-<h4 id="cancelOrder">cancelOrder(OrderId: any, callback?: Function)</h4>
+#### cancelOrder
 <p>Cancels an open order, by either specifying the OrderId returned when the order was created, or by specifying both the ClientOrderId and AccountId of the order. If AccountId is not specified, the default user account will be used.</p>
+<p><span>CoinsProAPI.cancelOrder(OrderId: any, callback?: Function)</span></p>
 <table>
   <tr>
     <td>OrderId</td>
@@ -462,8 +429,9 @@ agent.cancelOrder(17509100, (response) => {
 });
 ```
 
-<h4 id="getOrderStatus">getOrderStatus(OrderId: any, callback?: Function)</h4>
+#### getOrderStatus
 <p>Gets the current operating status of an order submitted to the Order Management System.</p>
+<p><span>CoinsProAPI.getOrderStatus(OrderId: any, callback?: Function)</span></p>
 <table>
   <tr>
     <td>OrderId</td>
@@ -481,16 +449,17 @@ agent.getOrderStatus(17509100, (response) => {
 });
 ```
 
-<h4 id="getOrderFee">
-getOrderFee({ InstrumentId, ProductId, Amount, OrderType, MakerTaker }: {<br>
+#### getOrderFee
+<p>Returns an estimate of the fee for a specific order and order type.</p>
+<p><span>
+CoinsProAPI.getOrderFee({ InstrumentId, ProductId, Amount, OrderType, MakerTaker }: {<br>
 &nbsp;&nbsp;InstrumentId: number;<br>
 &nbsp;&nbsp;ProductId: number;<br>
 &nbsp;&nbsp;Amount: number;<br>
 &nbsp;&nbsp;OrderType: string<br>
 &nbsp;&nbsp;MakerTaker: string;<br>
 }, callback?: Function)
-</h4>
-<p>Returns an estimate of the fee for a specific order and order type.</p>
+</span></p>
 <table>
   <tr>
     <td>InstrumentId</td>
@@ -530,8 +499,9 @@ agent.getOrderFee({
 });
 ```
 
-<h4 id="getOrderHistory">getOrderHistory(Depth: number, callback?: Function)</h4>
+#### getOrderHistory
 <p>Retrieves a list of the last n=Depth orders placed on your account.</p>
+<p><span>CoinsProAPI.getOrderHistory(Depth: number, callback?: Function)</span></p>
 <table>
   <tr>
     <td>Depth</td>
@@ -549,9 +519,10 @@ agent.getOrderHistory(30, (response) => {
 });
 ```
 
-<h4 id="getOpenOrders">getOpenOrders(callback?: Function)</h4>
+#### getOpenOrders
 <p>Retrieves the Open Orders for a specified account of the current user. Keep in mind that if
 your order is no longer in a working state, you will not find it using GetOpenOrders.</p>
+<p><span>CoinsProAPI.getOpenOrders(callback?: Function)</span></p>
 <table>
   <tr>
     <td>callback</td>
@@ -565,16 +536,17 @@ agent.getOpenOrders((response) => {
 });
 ```
 
-<h3 id="deposits">Deposits</h3>
+### Deposits 
 
-<h4 id="getDepositTickets">
-getDepositTickets({ Limit, OperatorId, StartIndex }?: {<br>
+#### getDepositTickets
+<p>Get a list of deposits for an account.</p>
+<p><span>
+CoinsProAPI.getDepositTickets({ Limit, OperatorId, StartIndex }?: {<br>
 &nbsp;&nbsp;Limit: any;<br>
 &nbsp;&nbsp;OperatorId?: number;<br>
 &nbsp;&nbsp;StartIndex?: number;<br>
 }, callback?: Function)
-</h4>
-<p>Get a list of deposits for an account.</p>
+</span></p>
 <table>
   <tr>
     <td>Limit</td>
@@ -602,15 +574,16 @@ agent.getDepositTickets({
 });
 ```
 
-<h3 id="withdrawals">Withdrawals</h3>
+### Withdrawals 
 
-<h4 id="createWithdrawTicket">
-createWithdrawTicket({ ProductId, Amount }: {<br>
+#### createWithdrawTicket
+<p>Creates a withdrawal ticket to send funds from Coins Pro to the user’s Coins.ph wallet</p>
+<p><span>
+CoinsProAPI.createWithdrawTicket({ ProductId, Amount }: {<br>
 &nbsp;&nbsp;ProductId: any;<br>
 &nbsp;&nbsp;Amount: any;<br>
 }, callback?: Function)
-</h4>
-<p>Creates a withdrawal ticket to send funds from Coins Pro to the user’s Coins.ph wallet</p>
+</span></p>
 <table>
   <tr>
     <td>ProductId</td>
@@ -635,10 +608,11 @@ agent.createWithdrawTicket({
 });
 ```
 
-<h4 id="getWithdrawTicket">
-getWithdrawTicket(RequestCode: any, callback?: Function)
-</h4>
+#### getWithdrawTicket
 <p>Gets the current operating status of a Withdraw Ticket.</p>
+<p><span>
+CoinsProAPI.getWithdrawTicket(RequestCode: any, callback?: Function)
+</span></p>
 <table>
   <tr>
     <td>RequestCode</td>
@@ -660,14 +634,15 @@ agent.getWithdrawTicket("aca9f8d2-229f-4234-b032-69f0fd413e04", (response) => {
 });
 ```
 
-<h4 id="getWithdrawTickets">
-getWithdrawTickets({ Limit, StartIndex, OperatorId }?: <br>
+#### getWithdrawTickets
+<p>Get a list of withdrawals for an account.</p>
+<p><span>
+CoinsProAPI.getWithdrawTickets({ Limit, StartIndex, OperatorId }?: <br>
 &nbsp;&nbsp;Limit: any;<br>
 &nbsp;&nbsp;StartIndex?: number;<br>
 &nbsp;&nbsp;OperatorId?: number;<br>
 }, callback?: Function)
-</h4>
-<p>Get a list of withdrawals for an account.</p>
+</span></p>
 <table>
   <tr>
     <td>Limit</td>
@@ -696,12 +671,13 @@ agent.getWithdrawTickets({
 });
 ```
 
-<h3 id="market-data">Market Data</h3>
+### Market Data 
 
-<h4 id="subscribeLevel1">subscribeLevel1(InstrumentId: any, callback?: Function)</h4>
+#### subscribeLevel1
 <p>Retrieves the latest Level 1 Ticker information and Subscribes the user to Level 1 Market Data
 updates for the specified Instrument. After subscribing, the user will receive periodic
 Level1UpdateEvent event information until they call UnsubscribeLevel1.</p>
+<p><span>CoinsProAPI.subscribeLevel1(InstrumentId: any, callback?: Function)</span></p>
 <table>
   <tr>
     <td>InstrumentId</td>
@@ -719,9 +695,10 @@ agent.subscribeLevel1(6, (response) => {
 });
 ```
 
-<h4 id="unsubscribeLevel1">unsubscribeLevel1(InstrumentId: any, callback?: Function)</h4>
+#### unsubscribeLevel1
 <p>Unsubscribes the user from receiving Level 1 Market Data updates for the specified
 Instrument.</p>
+<p><span>CoinsProAPI.unsubscribeLevel1(InstrumentId: any, callback?: Function)</span></p>
 <table>
   <tr>
     <td>InstrumentId</td>
@@ -739,12 +716,13 @@ agent.unsubscribeLevel1(6, (response) => {
 });
 ```
 
-<h4 id="subscribeLevel2">subscribeLevel2({ InstrumentId, Depth }: {<br>
-&nbsp;&nbsp;InstrumentId: number;<br>
-&nbsp;&nbsp;Depth: number;<br>
-}, callback?: Function)</h4>
+#### subscribeLevel2
 <p>Retrieves the latest Level 2 Snapshot and Subscribes user to Level 2 Market Data updates for
 the specified Instrument.</p>
+<p><span>CoinsProAPI.subscribeLevel2({ InstrumentId, Depth }: {<br>
+&nbsp;&nbsp;InstrumentId: number;<br>
+&nbsp;&nbsp;Depth: number;<br>
+}, callback?: Function)</span></p>
 <table>
   <tr>
     <td>InstrumentId</td>
@@ -773,8 +751,9 @@ agent.subscribeLevel2({
 });
 ```
 
-<h4 id="unsubscribeLevel2">unsubscribeLevel2(InstrumentId: any, callback?: Function)</h4>
+#### unsubscribeLevel2
 <p>Unsubscribes from Level 2 Market Data updates for the specified Instrument.</p>
+<p><span>CoinsProAPI.unsubscribeLevel2(InstrumentId: any, callback?: Function)</span></p>
 <table>
   <tr>
     <td>InstrumentId</td>
@@ -792,12 +771,13 @@ agent.unsubscribeLevel2(6, (response) => {
 });
 ```
 
-<h4 id="subscribeTrades">subscribeTrades({ InstrumentId, IncludeLastCount }: {<br>
-&nbsp;&nbsp;InstrumentId: number;<br>
-&nbsp;&nbsp;IncludeLastCount: number;<br>
-}, callback?: Function)</h4>
+#### subscribeTrades
 <p>Retrieves the latest public market trades and Subscribes User to Trade updates for the
 specified Instrument.</p>
+<p><span>CoinsProAPI.subscribeTrades({ InstrumentId, IncludeLastCount }: {<br>
+&nbsp;&nbsp;InstrumentId: number;<br>
+&nbsp;&nbsp;IncludeLastCount: number;<br>
+}, callback?: Function)</span></p>
 <table>
   <tr>
     <td>InstrumentId</td>
@@ -822,8 +802,9 @@ agent.subscribeTrades({
 });
 ```
 
-<h4 id="unsubscribeTrades">unsubscribeTrades(InstrumentId: any, callback?: Function)</h4>
+#### unsubscribeTrades
 <p>Unsubscribes the user from Trades Market Data Feed.</p>
+<p><span>CoinsProAPI.unsubscribeTrades(InstrumentId: any, callback?: Function)</span></p>
 <table>
   <tr>
     <td>InstrumentId</td>
@@ -841,10 +822,11 @@ agent.unsubscribeTrades(6, (response) => {
 });
 ```
 
-<h3 id="account-events">Account Events</h3>
+### Account Events 
 
-<h4 id="subscribeAccountEvents">subscribeAccountEvents(callback?: Function)</h4>
+#### subscribeAccountEvents
 <p>Subscribe to account-level events, such as orders, trades, deposits and withdraws.Coins Pro recommends that you use this subscription to track your order states.</p>
+<p><span>CoinsProAPI.subscribeAccountEvents(callback?: Function)</span></p>
 <table>
   <tr>
     <td>callback</td>
@@ -858,10 +840,9 @@ agent.subscribeAccountEvents((response) => {
 });
 ```
 
-<h3 id="ping">Ping</h3>
-
-<h4>ping(callback?: Function)</h4>
+### Ping 
 <p>Used to keep a connection alive.</p>
+<p><span>CoinsProAPI.ping(callback?: Function)</span></p>
 <table>
   <tr>
     <td>callback</td>
@@ -877,20 +858,17 @@ setInterval(() => {
 }, 40000);
 ```
 
-<h2 id="faq">FAQ</h2>
-<h3 id="how-to-get-api-key">How to Get API Key & Secret?</h3>
-<ol>
-  <li>Login to the Coins Pro website at <a href="https://exchange.coins.asia/">https://exchange.coins.asia/</a></li>
-  <li>Go to <a href="https://exchange.coins.asia/keys">API Key Management</a>. This can also be accessed via the website hamburger menu.</li>
-  <li>From the API Key Management, you can create new API Keys which will generate your API Key & Secret. This webpage also displays your existing API Keys.</li>
-</ol>
+## FAQ
 
-<h3 id="how-to-get-userid">How to Get UserId?</h3>
-<ol>
-  <li>Login to the Coins Pro website at <a href="https://exchange.coins.asia/">https://exchange.coins.asia/</a></li>
-  <li>Go to <a href="https://exchange.coins.asia/keys">API Key Management</a>. This can also be accessed via the website hamburger menu.</li>
-  <li>From the API Key Management webpage, your UserId should be displayed.</li>
-</ol>
+### How to Get API Key and Secret?
+1. Login to the Coins Pro website at [https://exchange.coins.asia/](https://exchange.coins.asia/)
+2. Go to [API Key Management](https://exchange.coins.asia/keys). This can also be accessed via the website hamburger menu.
+3. From the API Key Management, you can create new API Keys which will generate your API Key & Secret. This webpage also displays your existing API Keys.
 
-<h2 id="license">License</h2>
-<a href="https://github.com/JSON-G/coins-pro/blob/master/LICENSE">MIT</a>
+### How to Get UserId?
+1. Login to the Coins Pro website at [https://exchange.coins.asia/](https://exchange.coins.asia/)
+2. Go to [API Key Management](https://exchange.coins.asia/keys). This can also be accessed via the website hamburger menu.
+3. From the API Key Management webpage, your UserId should be displayed.
+
+## License
+[MIT](https://github.com/JSON-G/coins-pro/blob/master/LICENSE)

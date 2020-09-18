@@ -1,6 +1,6 @@
 {
   "name": "coins-pro",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "coins-pro is an API wrapper for Coins Pro (https://exchange.coins.asia) written in NodeJS",
   "main": "lib/coins-pro.js",
   "scripts": {
