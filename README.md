@@ -111,14 +111,13 @@ const CoinsProAPI = require("coins-pro");
 let agent = new CoinsProAPI();
 
 // Thirdly, invoke the method start and pass an object which contains your 
-// APIKey, secret, UserId, and AccountId for the first parameter.
+// APIKey, secret, and UserId for the first parameter.
 // The second second parameter accepts a callback function which will 
 // execute after you are successfully authenticated & connected to the Coins Pro websocket server.
 agent.start({
   "APIKey": "your_api_key",
   "secret": "your_secret",
-  "UserId": "your_user_id",
-  "AccountId": "your_account_id"
+  "UserId": "your_user_id"
 }, (response) => {
   console.log(`===== Client Authenticated =====\n`, response);
 
