@@ -565,7 +565,7 @@ getDepositTickets({ Limit, OperatorId, StartIndex }?: {<br>
 &nbsp;&nbsp;Limit: any;<br>
 &nbsp;&nbsp;OperatorId?: number;<br>
 &nbsp;&nbsp;StartIndex?: number;<br>
-}, callback?: () => void)
+}, callback?: Function)
 </h4>
 <p>Get a list of deposits for an account.</p>
 <table>
@@ -601,7 +601,7 @@ agent.getDepositTickets({
 createWithdrawTicket({ ProductId, Amount }: {<br>
 &nbsp;&nbsp;ProductId: any;<br>
 &nbsp;&nbsp;Amount: any;<br>
-}, callback?: () => void)
+}, callback?: Function)
 </h4>
 <p>Creates a withdrawal ticket to send funds from Coins Pro to the user’s Coins.ph wallet</p>
 <table>
@@ -629,7 +629,7 @@ agent.createWithdrawTicket({
 ```
 
 <h4 id="getWithdrawTicket">
-getWithdrawTicket(RequestCode: any, callback?: () => void)
+getWithdrawTicket(RequestCode: any, callback?: Function)
 </h4>
 <p>Gets the current operating status of a Withdraw Ticket.</p>
 <table>
@@ -658,7 +658,7 @@ getWithdrawTickets({ Limit, StartIndex, OperatorId }?: <br>
 &nbsp;&nbsp;Limit: any;<br>
 &nbsp;&nbsp;StartIndex?: number;<br>
 &nbsp;&nbsp;OperatorId?: number;<br>
-}, callback?: () => void)
+}, callback?: Function)
 </h4>
 <p>Get a list of withdrawals for an account.</p>
 <table>
@@ -830,7 +830,7 @@ agent.subscribeTrades({
 
 ```javascript
 agent.unsubscribeTrades(6, (response) => {
-  console.log(`===== Unsubscribe Public Trades =====\n`, response)
+  console.log(`===== Unsubscribe Public Trades =====\n`, response);
 });
 ```
 
@@ -847,7 +847,7 @@ agent.unsubscribeTrades(6, (response) => {
 
 ```javascript
 agent.subscribeAccountEvents((response) => {
-  console.log(`===== Account Event ===== \n`, response)
+  console.log(`===== Account Event ===== \n`, response);
 });
 ```
 
