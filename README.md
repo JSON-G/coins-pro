@@ -2,7 +2,7 @@
 
 [![Version npm](https://img.shields.io/badge/npm-v1.1.2-blue?logo=npm)](https://www.npmjs.com/package/coins-pro)
 
-coins-pro is an API wrapper for Coins Pro [https://exchange.coins.asia](https://exchange.coins.asia) written in NodeJS
+coins-pro is an API wrapper for Coins Pro ([https://exchange.coins.asia](https://exchange.coins.asia)) written in NodeJS
 
 API Documentation: https://exchange.coins.asia/assets/docs/Coins-Pro-API.pdf
 
